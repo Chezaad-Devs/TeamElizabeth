@@ -37,6 +37,7 @@ export default function Card({ post }) {
             post._links["wp:featuredmedia"][0].href
           ); // Usa Axios para obtener la imagen
           setImage(response.data.source_url);
+          console.log(response.data.source_url);
         }
       } catch (error) {
         console.error("Error fetching image:", error);
@@ -53,9 +54,10 @@ export default function Card({ post }) {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "https://aldiapais.com/wp-json/wp/v2/categories"
+          "https://teamelizabethmartinez.com/wp-json/wp/v2/categories"
         ); // Usa Axios para obtener las categorías
         setCategories(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
         // Handle error
@@ -85,7 +87,7 @@ export default function Card({ post }) {
 
     try {
       await axios.delete(
-        `https://aldiapais.com/?rest_route=/wp/v2/posts/${id}&JWT=${token}`
+        `https://teamelizabethmartinez.com/?rest_route=/wp/v2/posts/${id}&JWT=${token}`
       );
       window.location.href = "dashboard";
     } catch (error) {
@@ -110,7 +112,7 @@ export default function Card({ post }) {
       }
 
       await axios.put(
-        `https://aldiapais.com/?rest_route=/wp/v2/posts/${post.id}&JWT=${token}`,
+        `https://teamelizabethmartinez.com/?rest_route=/wp/v2/posts/${post.id}&JWT=${token}`,
         formData,
         {
           headers: {

@@ -1,33 +1,42 @@
-// import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import View from "./pages/View";
-import Admin from "./pages/Admin";
+import { lazy, Suspense } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
+// Carga diferida de los componentes para mejorar rendimiento
+const Login = lazy(() => import("./pages/Login"));
+const View = lazy(() => import("./pages/View"));
+const Admin = lazy(() => import("./pages/Admin"));
 
-      <Route path="login" element={<Login />} />
-      <Route
-        path="dashboard"
-        element={
-          <ProtectedRoute>
-            <Admin />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="aldiapais"
-        element={
-          <ProtectedRoute>
-            <View />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+function App() {
+  // Obtener estado de autenticación (puedes mejorarlo con Context o Redux)
+  const isAuthenticated = !!localStorage.getItem("token");
+
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <Routes>
+        <Route
+          path="/"
+          element={<Navigate to={isAuthenticated ? "/dashboard" : "/login"} />}
+        />
+        <Route path="login" element={<Login />} />
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="teamelizabethmartinez"
+          element={
+            <ProtectedRoute>
+              <View />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </Suspense>
   );
 }
 

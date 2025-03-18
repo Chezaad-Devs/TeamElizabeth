@@ -13,24 +13,24 @@ function NavBar() {
 
   const toggleView = () => {
     const nextPath =
-      location.pathname === "/dashboard" ? "/aldiapais" : "/dashboard";
+      location.pathname === "/dashboard" ? "/teamelizabethmartinez" : "/dashboard";
     navigate(nextPath);
   };
 
-  const getGreeting = () => {
-    const currentTime = new Date().getHours();
-    let greeting = "Hola";
+  // const getGreeting = () => {
+  //   const currentTime = new Date().getHours();
+  //   let greeting = "Hola";
 
-    if (currentTime >= 5 && currentTime < 12) {
-      greeting = "Buenos días";
-    } else if (currentTime >= 12 && currentTime < 18) {
-      greeting = "Buenas tardes";
-    } else {
-      greeting = "Buenas noches";
-    }
+  //   if (currentTime >= 5 && currentTime < 12) {
+  //     greeting = "Buenos días";
+  //   } else if (currentTime >= 12 && currentTime < 18) {
+  //     greeting = "Buenas tardes";
+  //   } else {
+  //     greeting = "Buenas noches";
+  //   }
 
-    return greeting;
-  };
+  //   return greeting;
+  // };
 
   const getViewButtonText = () => {
     return location.pathname === "/dashboard" ? "Ver posts" : "Crear post";
@@ -40,12 +40,12 @@ function NavBar() {
     <header className="Header">
       <nav className="Container-Nav">
         <div className="Column1">
-          <Link to="/aldiapais">
+          <Link to="/teamelizabethmartinez">
             <img src={Logo} alt="Logo" className="Img" />
           </Link>
-          <h1>
+          {/* <h1>
             <span className="Saludo">{getGreeting()} </span> Gladialisa
-          </h1>
+          </h1> */}
         </div>
         <div className="column2">
           <button onClick={toggleView} className="Btn">

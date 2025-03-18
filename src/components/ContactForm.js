@@ -19,7 +19,7 @@ function CreatePostForm() {
   useEffect(() => {
     // Obtener las categorías disponibles desde WordPress
     axios
-      .get("https://aldiapais.com/wp-json/wp/v2/categories")
+      .get("https://teamelizabethmartinez.com/wp-json/wp/v2/categories")
       .then((response) => {
         setCategories(response.data);
         setSelectedCategory(response.data[0]?.id); // Establecer la primera categoría como la seleccionada por defecto
@@ -48,7 +48,7 @@ function CreatePostForm() {
     try {
       // Subir la imagen destacada
       const imageResponse = await axios.post(
-        `https://aldiapais.com/?rest_route=/wp/v2/media`,
+        `https://teamelizabethmartinez.com/?rest_route=/wp/v2/media`,
         formData,
         {
           headers: {
@@ -68,7 +68,7 @@ function CreatePostForm() {
       };
 
       const postResponse = await axios.post(
-        `https://aldiapais.com/?rest_route=/wp/v2/posts&JWT=${token}`,
+        `https://teamelizabethmartinez.com/?rest_route=/wp/v2/posts&JWT=${token}`,
         postData,
         {
           headers: {

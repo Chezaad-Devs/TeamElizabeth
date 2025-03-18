@@ -14,7 +14,8 @@ function View() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://aldiapais.com/?rest_route=/wp/v2/posts&JWT=${token}&per_page=15&orderby=date&order=desc`
+          `https://teamelizabethmartinez.com/?rest_route=/wp/v2/posts&JWT=${token}&per_page=15&orderby=date&order=desc`
+
         );
 
         if (!response.ok) {
@@ -23,6 +24,7 @@ function View() {
 
         const postData = await response.json();
         setData(postData);
+        console.log("los datos esta aqui:" , postData);
       } catch (error) {
         console.error(`Error fetching data: ${error.message}`);
       } finally {
@@ -65,7 +67,7 @@ function View() {
             <Card key={item.id} post={item} updatePost={updatePost} />
           ))
         ) : (
-          <h1>No hay posts disponibles</h1>
+          <h1 className="mt-5 font-bold text-3xl">No hay posts disponibles</h1>
         )}
       </section>
     </div>
