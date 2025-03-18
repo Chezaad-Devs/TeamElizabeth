@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/TeamElizabeth/static/css/main.33487e8a.css",
-    "main.js": "/TeamElizabeth/static/js/main.914fba40.js",
-    "static/js/453.cff44eb2.chunk.js": "/TeamElizabeth/static/js/453.cff44eb2.chunk.js",
-    "static/media/Logo.webp": "/TeamElizabeth/static/media/Logo.4eb4677ae38978059c6b.webp",
-    "index.html": "/TeamElizabeth/index.html",
-    "main.33487e8a.css.map": "/TeamElizabeth/static/css/main.33487e8a.css.map",
-    "main.914fba40.js.map": "/TeamElizabeth/static/js/main.914fba40.js.map",
-    "453.cff44eb2.chunk.js.map": "/TeamElizabeth/static/js/453.cff44eb2.chunk.js.map"
+    "main.css": "/teamelizabethmartinez/static/css/main.33487e8a.css",
+    "main.js": "/teamelizabethmartinez/static/js/main.fc7282f6.js",
+    "static/js/453.f88cc7e1.chunk.js": "/teamelizabethmartinez/static/js/453.f88cc7e1.chunk.js",
+    "static/media/Logo.webp": "/teamelizabethmartinez/static/media/Logo.4eb4677ae38978059c6b.webp",
+    "index.html": "/teamelizabethmartinez/index.html",
+    "main.33487e8a.css.map": "/teamelizabethmartinez/static/css/main.33487e8a.css.map",
+    "main.fc7282f6.js.map": "/teamelizabethmartinez/static/js/main.fc7282f6.js.map",
+    "453.f88cc7e1.chunk.js.map": "/teamelizabethmartinez/static/js/453.f88cc7e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.33487e8a.css",
-    "static/js/main.914fba40.js"
+    "static/js/main.fc7282f6.js"
   ]
 }
